@@ -8,3 +8,19 @@
 // layout file, like app/views/layouts/application.html.erb
 
 console.log('Hello World from Webpacker')
+import 'element-ui/lib/theme-default/index.css'
+import Vue from 'vue'
+import VTable from './table.vue'
+Vue.component('vtable',VTable)
+import App from './app.vue'
+import {Button,Dialog,Table,TableColumn} from 'element-ui'
+import locale from 'element-ui/lib/locale/lang/en'
+Vue.use(Button,{ locale })
+Vue.use(Dialog,{ locale })
+Vue.use(Table,{ locale })
+Vue.use(TableColumn,{ locale })
+
+document.addEventListener('DOMContentLoaded', () => {
+  new Vue(App).$mount("#app")  
+})
+
